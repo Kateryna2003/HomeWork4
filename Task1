@@ -1,0 +1,23 @@
+package task2;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        StringBuffer s  = new StringBuffer("password");
+        System.out.println(GetUniqueString(s));
+    }
+    public static StringBuffer GetUniqueString( StringBuffer buf) {
+        StringBuffer s = new StringBuffer(buf);
+        for (int i = 0; i < s.length(); i++) {
+            char sumb1 = s.charAt(i);
+            for (int j = s.length() - 1; j > i; j--) {
+                char sumb2 = s.charAt(j);
+                if (sumb1 == sumb2) {
+                    s.deleteCharAt(j);
+                }
+            }
+
+        }
+return s;
+    }
+}
