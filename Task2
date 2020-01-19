@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        String number = new String();
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        if (num < 0) {
+            System.out.println("EROOR");
+            return;
+
+        }
+        System.out.println(GetNewnumber(num));
+    }
+
+    public static String GetNewnumber(int num) {
+        int numb = num;
+        String b = "";
+        while (num != 0) {
+            numb = num % 2;
+            b = numb + b;
+            num = num / 2;
+        }
+        return b;
+    }
+}
